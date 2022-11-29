@@ -14,7 +14,7 @@ public class LoginTests extends BaseTest{
             "test@gmail.com| 1 | Неверное сочетание логина и пароля"
     }, delimiter = '|')
     @ParameterizedTest(name = "{2} when try to authorized by email {0} and password {1}")
-    void UnsuccessloginTest(String login, String password, String result) {
+    void unsuccessloginTest(String login, String password, String result) {
         loginPage.clickLoginButtonForSignIn()
                 .emailFill(login)
                 .passwordFill(password)
