@@ -16,7 +16,6 @@ import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class SelenideWebTest {
-
     @BeforeEach
     void setUp() {
         open("https://selenide.org/");
