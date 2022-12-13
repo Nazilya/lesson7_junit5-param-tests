@@ -25,6 +25,7 @@ public class GoogleWebTest {
         open("https://google.com");
     }
 
+    //ParameterizedTest - MethodSource
 //    static Stream<Arguments> googleSearchTest() {
 //        return Stream.of(
 //                Arguments.of("selenide", "https://selenide.org", 1),
