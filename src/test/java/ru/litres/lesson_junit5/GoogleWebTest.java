@@ -49,7 +49,6 @@ public class GoogleWebTest {
     @Test
     @Tag("BLOCKER")
     void googlePhotoPopupTest() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
         $("img[alt='Camera search']").click();
         $(byText("Search any image with Google Lens")).shouldBe(visible);
     }
