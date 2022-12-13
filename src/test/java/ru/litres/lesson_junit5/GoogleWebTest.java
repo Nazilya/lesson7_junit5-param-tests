@@ -1,6 +1,8 @@
 package ru.litres.lesson_junit5;
 
 import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -47,6 +49,7 @@ public class GoogleWebTest {
     @Test
     @Tag("BLOCKER")
     void googlePhotoPopupTest() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
         $("img[alt='Camera search']").click();
         $(byText("Search any image with Google Lens")).shouldBe(visible);
     }
