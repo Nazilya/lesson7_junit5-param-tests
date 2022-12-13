@@ -19,7 +19,7 @@ public class LoginPage {
             userName = $(".Profile-module__name"),
             checkUnSuccessMessage = $(".AuthorizationPopup-module__error"),
             authorizationPopup = $(".AuthorizationPopup-module__closeIcon");
-    Button submitButton = new Button("Войти", $x("//button[.='Войти']"));
+    private Button submitButton = new Button("Войти", $x("//button[.='Войти']"));
 
     public LoginPage clickLoginButtonForSignIn() {
         loginButton.click();

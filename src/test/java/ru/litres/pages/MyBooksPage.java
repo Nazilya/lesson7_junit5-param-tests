@@ -11,8 +11,8 @@ import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.$$x;
 
 public class MyBooksPage {
-    ElementsCollection navigationMenuItems = $$x("//ul[@class='my-books-list']//li");
-    ElementsCollection myBooksMenuElement = $$(".MyBooksMenu-module__item"); //их 6 -  список элементов выпадающего меню Мои книги
+    private ElementsCollection navigationMenuItems = $$x("//ul[@class='my-books-list']//li");
+    private ElementsCollection myBooksMenuElement = $$(".MyBooksMenu-module__item"); //их 6 -  список элементов выпадающего меню Мои книги
 
     public MyBooksPage checkMyBooksNavMenuElementsCount(int resultCount) {
         navigationMenuItems.should(CollectionCondition.size(resultCount));
