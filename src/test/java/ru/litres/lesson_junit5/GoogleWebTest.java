@@ -25,6 +25,7 @@ public class GoogleWebTest {
         open("https://google.com");
     }
 
+    //ParameterizedTest - MethodSource
 //    static Stream<Arguments> googleSearchTest() {
 //        return Stream.of(
 //                Arguments.of("selenide", "https://selenide.org", 1),
@@ -49,7 +50,6 @@ public class GoogleWebTest {
     @Test
     @Tag("BLOCKER")
     void googlePhotoPopupTest() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
         $("img[alt='Camera search']").click();
         $(byText("Search any image with Google Lens")).shouldBe(visible);
     }

@@ -17,7 +17,6 @@ public class LoginTests extends BaseTest{
     }, delimiter = '|')
     @ParameterizedTest(name = "{2} when try to authorized by email {0} and password {1}")
     void unsuccessloginTest(String login, String password, String result) {
-        SelenideLogger.addListener("allure", new AllureSelenide());
         loginPage.clickLoginButtonForSignIn()
                 .emailFill(login)
                 .passwordFill(password)
