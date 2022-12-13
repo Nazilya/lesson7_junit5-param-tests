@@ -24,7 +24,6 @@ public class MyBooksTests extends BaseTest {
     @MethodSource
     @ParameterizedTest(name = "Проверка наличия кнопок {1} в меню Мои книги и их общее кол-во {0}")
     void checkMyBooksMenuButtonsTest(int count, List<String> buttonsNames) {
-        SelenideLogger.addListener("allure", new AllureSelenide());
         mainPage.openMyBooksPage();
         myBooksPage
                 .checkMyBooksNavMenuElementsCount(count)
@@ -32,7 +31,6 @@ public class MyBooksTests extends BaseTest {
     }
 
     static Stream<Arguments> checkMyBooksDrugAndDropMenuButtonsTest() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
         return Stream.of(
                 Arguments.of(6, List.of("Все", "Мои", "Просмотренные", "Отложенные", "Корзина", "Списки"))
         );
@@ -41,7 +39,6 @@ public class MyBooksTests extends BaseTest {
     @MethodSource
     @ParameterizedTest(name = "Проверка наличия кнопок {1} в выпадающем меню Мои книги и их общее кол-во {0}")
     void checkMyBooksDrugAndDropMenuButtonsTest(int count, List<String> buttonsNames) {
-        SelenideLogger.addListener("allure", new AllureSelenide());
         mainPage.navigateToMyBooksDrugAndDropMenu();
         myBooksPage
                 .checkMyBooksDrugAndDropMenuElementsCount(count)

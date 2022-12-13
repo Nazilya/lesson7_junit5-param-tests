@@ -14,7 +14,6 @@ public class SearchTests extends BaseTest {
     @CsvFileSource(resources = "/searchBook.csv")
     @ParameterizedTest(name = "{1} при поиске книги с названием {0}")
     void searchBooksTest1(String bookName, String resultMessage) {
-        SelenideLogger.addListener("allure", new AllureSelenide());
         mainPage.searchBook(bookName);
         searchPage.checkResultOfSearchMessage(resultMessage);
     }
