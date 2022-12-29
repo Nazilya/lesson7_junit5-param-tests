@@ -1,6 +1,7 @@
 package ru.litres.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.DisplayName;
 import org.openqa.selenium.By;
 import ru.litres.components.MyBooksMenu;
@@ -13,20 +14,20 @@ public class MainPage {
     private MyBooksMenu myBooksMenu = new MyBooksMenu();
 
 
-    @DisplayName("Search book on the main page")
+    @Step("найти книгу на главной странице")
     public SearchPage searchBook(String value) {
         searchInputSelector.setValue(value).pressEnter();
         searchInputSelector.clear();
         return searchPage;
     }
 
-    @DisplayName("Click to open MyBooksMenu")
+    @Step("кликнуть  для открытия меню 'Мои книги'")
     public MainPage openMyBooksPage() {
         myBooksMenu.click();
         return this;
     }
 
-    @DisplayName("Navigate to hover MyBooksMenu")
+    @Step("навести мышку на меню 'Мои книги'")
     public MainPage navigateToMyBooksDrugAndDropMenu() {
         myBooksMenu.navigateTo();
         return this;

@@ -2,6 +2,8 @@ package ru.litres.tests;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -23,6 +25,7 @@ public class MyBooksTests extends BaseTest {
 
     @MethodSource
     @ParameterizedTest(name = "Проверка наличия кнопок {1} в меню Мои книги и их общее кол-во {0}")
+    @Tag("UITests")
     void checkMyBooksMenuButtonsTest(int count, List<String> buttonsNames) {
         mainPage.openMyBooksPage();
         myBooksPage
@@ -38,6 +41,7 @@ public class MyBooksTests extends BaseTest {
 
     @MethodSource
     @ParameterizedTest(name = "Проверка наличия кнопок {1} в выпадающем меню Мои книги и их общее кол-во {0}")
+    @Tag("UITests")
     void checkMyBooksDrugAndDropMenuButtonsTest(int count, List<String> buttonsNames) {
         mainPage.navigateToMyBooksDrugAndDropMenu();
         myBooksPage
