@@ -5,7 +5,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class MyBooksMenu {
     private SelenideElement
-            myBooksSelector = $(".MyBooks-modules__wrapper"); //локатор кнопки Мои книги в правом ерхнем углу
+            myBooksSelector = $("a[href='/pages/my_books_all/']"); //локатор кнопки Мои книги в правом ерхнем углу
     public void click() {
         myBooksSelector.click();
     }
